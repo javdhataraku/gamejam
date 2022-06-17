@@ -10,11 +10,18 @@ namespace GameJam.Game
         private readonly GameContext context;
         private float frametime;
         private readonly Image image;
+        private readonly Font Font;
+        private readonly Brush brush;
+
+        public int GoldAmount = 0;
+        private string GoldAmountText = "###";
 
         public GameRenderer(GameContext context)
         {
             this.context = context;
 
+            Font = new Font(FontFamily.GenericSansSerif, 6);
+            brush = new SolidBrush(Color.White);
             image = Bitmap.FromFile("sprites.png");
 
         }
@@ -39,6 +46,9 @@ namespace GameJam.Game
             Graphics g = InitGraphics(e);
             RenderRoom(g);
             RenderObject(g, context.player);
+
+            GoldAmountText = GoldAmount.ToString();
+            g.DrawString("Gold: " + GoldAmountText, Font, brush, 1,1);
         }
 
         private void RenderRoom(Graphics g)

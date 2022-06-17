@@ -27,6 +27,7 @@ namespace GameJam
             float frametime = 1;
             while (IsRunning)
             {
+                form.PlayerGravity(0, 1, 7);
                 form.Logic(frametime);
                 form.Invalidate();
                 Application.DoEvents();
