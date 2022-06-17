@@ -1,4 +1,6 @@
-﻿namespace GameJam.Game
+﻿using System.Drawing;
+
+namespace GameJam.Game
 {
     public class GameContext
     {
@@ -8,5 +10,7 @@
         internal RenderObject player = new RenderObject();
         internal SpriteMap spriteMap = new SpriteMap();
         internal Room room;
+
+        public Size ClientSize { get; internal set; }
     }
 }

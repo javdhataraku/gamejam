@@ -59,7 +59,9 @@ namespace GameJam
                 (gc.tileSize * gc.room.tiles[0].Length) * gc.scaleunit,
                 (gc.tileSize * gc.room.tiles.Length) * gc.scaleunit
                 );
+            gc.ClientSize = ClientSize;
         }
+
 
         private void RenderForm_KeyDown(object sender, KeyEventArgs e)
         {
@@ -170,17 +172,8 @@ namespace GameJam
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            //e.Graphics.TranslateTransform(-gc.player.rectangle.X + ClientSize.Width/2, -gc.player.rectangle.Y + ClientSize.Height/2);
 
-            /*
-            foreach(Tile[] row in gc.room.tiles)
-            {
-                
-            }
-            */
             renderer.Render(e, frametime);
-
-            //e.Graphics.DrawImage(gc.player.fr, gc.player.rectangle.X, gc.player.rectangle.Y, 40, 40);
 
 
         }
