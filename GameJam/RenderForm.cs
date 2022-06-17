@@ -65,7 +65,6 @@ namespace GameJam
 
         private void RenderForm_KeyDown(object sender, KeyEventArgs e)
         {
-
             if (e.KeyCode == Keys.S)
             {
                 MovePlayer(0, 1);
